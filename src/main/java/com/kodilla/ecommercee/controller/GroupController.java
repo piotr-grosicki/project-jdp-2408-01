@@ -17,17 +17,17 @@ public class GroupController {
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void createGroup(GroupDto groupDto) {
+    public void createGroup(@RequestBody GroupDto groupDto) {
 
     }
 
     @GetMapping(value = "{groupId}")
-    public GroupDto getGroup(Long groupId) {
+    public GroupDto getGroup(@PathVariable Long groupId) {
         return new GroupDto(1L, "testGroup");
     }
 
     @PutMapping(value = "{groupId}")
-    public GroupDto updateGroup(GroupDto groupDto) {
+    public GroupDto updateGroup(@RequestBody GroupDto groupDto) {
         return new GroupDto(1L, "testGroup");
     }
 }
