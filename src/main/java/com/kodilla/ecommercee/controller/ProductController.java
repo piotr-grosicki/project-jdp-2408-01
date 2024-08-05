@@ -26,7 +26,7 @@ public class ProductController {
 
     }
 
-    @PutMapping(value = "{productId}")
+    @PutMapping
     public ProductDto updateProduct(ProductDto productDto) {
         return new ProductDto(1L, "productName", 3, new BigDecimal(12));
     }
