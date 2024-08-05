@@ -17,22 +17,22 @@ public class ProductController {
     }
 
     @GetMapping(value = "{productId}")
-    public ProductDto getProduct(Long productId) {
+    public ProductDto getProduct(@PathVariable Long productId) {
         return new ProductDto(1L, "productName", 3, new BigDecimal(12));
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void createProduct(ProductDto productDto) {
+    public void createProduct(@RequestBody ProductDto productDto) {
 
     }
 
     @PutMapping
-    public ProductDto updateProduct(ProductDto productDto) {
+    public ProductDto updateProduct(@RequestBody ProductDto productDto) {
         return new ProductDto(1L, "productName", 3, new BigDecimal(12));
     }
 
     @DeleteMapping
-    public void deleteProduct(Long productId) {
+    public void deleteProduct(@PathVariable Long productId) {
 
     }
 }
