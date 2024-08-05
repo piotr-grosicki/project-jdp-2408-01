@@ -14,10 +14,10 @@ public class UserController {
 
     @GetMapping
     public List<UserDto> getUsers() {
-        List<UserDto> userDtos = new ArrayList<>();
-        userDtos.add(new UserDto(1L, "john_doe", "password123", "john.doe@example.com"));
-        userDtos.add(new UserDto(2L, "jane_smith", "password456", "jane.smith@example.com"));
-        return userDtos;
+        List<UserDto> UserDto = new ArrayList<>();
+        UserDto.add(new UserDto(1L, "john_doe", "password123", "john.doe@example.com"));
+        UserDto.add(new UserDto(2L, "jane_smith", "password456", "jane.smith@example.com"));
+        return UserDto;
     }
 
     @GetMapping(value = "{userId}")
