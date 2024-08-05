@@ -31,7 +31,7 @@ public class ProductController {
         return new ProductDto(1L, "productName", 3, new BigDecimal(12));
     }
 
-    @DeleteMapping
+    @DeleteMapping(value = "{productId}")
     public void deleteProduct(@PathVariable Long productId) {
 
     }
