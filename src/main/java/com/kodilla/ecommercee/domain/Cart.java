@@ -4,8 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import org.apache.catalina.User;
+import org.springframework.lang.NonNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +20,7 @@ public class Cart {
     private Long cartId;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "userId", unique = true, nullable = false)
+    @JoinColumn(name = "user_id", unique = true, nullable = false)
     private User user;
 
     @ManyToMany(cascade = CascadeType.ALL, mappedBy = "carts")
