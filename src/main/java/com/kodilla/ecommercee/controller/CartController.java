@@ -2,6 +2,7 @@ package com.kodilla.ecommercee.controller;
 
 
 import com.kodilla.ecommercee.domain.CartDto;
+import com.kodilla.ecommercee.domain.ProductDto;
 import com.kodilla.ecommercee.domain.UserDto;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -37,6 +38,7 @@ public class CartController {
         System.out.println("Cart updated with ID: " + cartDto.getCartId());
         return cartDto;
     }
+
 
     @DeleteMapping(value = "{cartId}")
     public void deleteCart(@PathVariable Long cartId) {
