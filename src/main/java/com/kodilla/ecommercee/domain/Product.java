@@ -21,6 +21,10 @@ public class Product {
     @GeneratedValue
     private Long productId;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "groupId")
+    private Group group;
+
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "join_carts_products",
