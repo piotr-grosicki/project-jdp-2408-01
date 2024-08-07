@@ -50,5 +50,4 @@ public class Product {
             inverseJoinColumns = {@JoinColumn(name = "orderId", referencedColumnName = "orderId")}
     )
     private List<Order> orders = new ArrayList<>();
-
 }
