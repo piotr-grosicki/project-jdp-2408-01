@@ -23,4 +23,8 @@ public class Order {
 
     @ManyToMany(cascade = CascadeType.ALL, mappedBy = "orders")
     private List<Product> products = new ArrayList<>();
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "userId")
+    private User user;
 }

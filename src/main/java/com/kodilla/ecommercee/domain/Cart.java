@@ -16,11 +16,11 @@ import java.util.List;
 public class Cart {
     @Id
     @NonNull
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cartId;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "user_id", unique = true, nullable = false)
+    @JoinColumn(name = "userId", unique = true, nullable = false)
     private User user;
 
     @ManyToMany(cascade = CascadeType.ALL, mappedBy = "carts")
