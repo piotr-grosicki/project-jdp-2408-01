@@ -14,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Setter
-@Entity(name = "groups")
+@Entity(name = "product_groups")
 public class Group {
     @Id
     @NotNull
