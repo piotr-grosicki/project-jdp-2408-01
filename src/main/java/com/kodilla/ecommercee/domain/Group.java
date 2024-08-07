@@ -21,6 +21,9 @@ public class Group {
     @GeneratedValue
     private Long groupId;
 
+    @Column(name = "name")
+    private String name;
+
     @OneToMany(
             targetEntity = Product.class,
             mappedBy = "group",
