@@ -43,7 +43,10 @@ public class Product {
     )
     private List<Cart> carts = new ArrayList<>();
 
-    @ManyToMany(cascade = CascadeType.PERSIST)
+    @ManyToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+    })
     @JoinTable(
             name = "join_orders_products",
             joinColumns = {@JoinColumn(name = "productId", referencedColumnName = "productId")},
