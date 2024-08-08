@@ -47,5 +47,4 @@ public class User {
             fetch = FetchType.EAGER
     )
     private List<Order> orders = new ArrayList<>();
-
 }
