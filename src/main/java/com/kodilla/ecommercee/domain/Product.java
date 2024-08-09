@@ -35,7 +35,10 @@ public class Product {
     @JoinColumn(name = "groupId")
     private Group group;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+    })
     @JoinTable(
             name = "join_carts_products",
             joinColumns = {@JoinColumn(name = "productId", referencedColumnName = "productId")},

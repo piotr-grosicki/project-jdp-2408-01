@@ -8,6 +8,7 @@ import lombok.Setter;
 import org.springframework.lang.NonNull;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 @NoArgsConstructor
@@ -25,6 +26,16 @@ public class Cart {
     @JoinColumn(name = "userId", unique = true, nullable = false)
     private User user;
 
-    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "carts")
+    @ManyToMany(mappedBy = "carts")
     private List<Product> products = new ArrayList<>();
+
+    public void addProduct(Product product) {
+        products.add(product);
+        product.getCarts().add(this);
+    }
+
+    public void removeProduct(Product product) {
+        products.remove(product);
+        product.getCarts().remove(this);
+    }
 }

@@ -24,9 +24,6 @@ public class OrderTestSuite {
     private UserRepository userRepository;
 
     @Autowired
-    private CartRepository cartRepository;
-
-    @Autowired
     private GroupRepository groupRepository;
 
     @Test
@@ -107,13 +104,13 @@ public class OrderTestSuite {
 
         //When
         orderRepository.deleteById(order.getOrderId());
-        Optional<Order> checkDeletedOrder = orderRepository.findById(order.getOrderId());
-        Optional<User> checkUser = userRepository.findById(userId);
-        Optional<Product> checkProduct = productRepository.findById(product.getProductId());
+        Optional<Order> checkedDeletedOrder = orderRepository.findById(order.getOrderId());
+        Optional<User> checkedUser = userRepository.findById(userId);
+        Optional<Product> checkedProduct = productRepository.findById(product.getProductId());
 
         //Then
-        assertFalse(checkDeletedOrder.isPresent());
-        assertTrue(checkUser.isPresent());
-        assertTrue(checkProduct.isPresent());
+        assertFalse(checkedDeletedOrder.isPresent());
+        assertTrue(checkedUser.isPresent());
+        assertTrue(checkedProduct.isPresent());
     }
 }
