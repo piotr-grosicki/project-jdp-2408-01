@@ -35,7 +35,10 @@ public class Product {
     @JoinColumn(name = "groupId")
     private Group group;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+    })
     @JoinTable(
             name = "join_carts_products",
             joinColumns = {@JoinColumn(name = "productId", referencedColumnName = "productId")},
@@ -43,11 +46,20 @@ public class Product {
     )
     private List<Cart> carts = new ArrayList<>();
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+    })
     @JoinTable(
             name = "join_orders_products",
             joinColumns = {@JoinColumn(name = "productId", referencedColumnName = "productId")},
             inverseJoinColumns = {@JoinColumn(name = "orderId", referencedColumnName = "orderId")}
     )
     private List<Order> orders = new ArrayList<>();
+
+    public Product(String name, int quantity, BigDecimal price) {
+        this.name = name;
+        this.quantity = quantity;
+        this.price = price;
+    }
 }

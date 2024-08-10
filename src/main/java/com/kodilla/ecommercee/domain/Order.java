@@ -36,6 +36,10 @@ public class Order {
     @JoinColumn(name = "userId")
     private User user;
 
-    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "orders")
+    @ManyToMany(mappedBy = "orders")
     private List<Product> products = new ArrayList<>();
+
+    public Order(User user) {
+        this.user = user;
+    }
 }
