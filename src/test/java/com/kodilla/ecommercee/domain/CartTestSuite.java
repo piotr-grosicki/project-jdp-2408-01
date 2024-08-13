@@ -98,9 +98,4 @@ public class CartTestSuite {
 
     }
 
-    @AfterEach
-    public void cleanUp() {
-        cartRepository.deleteAll();
-        userRepository.deleteAll();
-    }
 }
