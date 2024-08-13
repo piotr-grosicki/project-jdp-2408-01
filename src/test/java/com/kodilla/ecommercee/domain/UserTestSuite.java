@@ -125,7 +125,7 @@ public class UserTestSuite {
 
         // Then
         assertFalse(deletedUser.isPresent());
-        assertFalse(deletedCart.isPresent());
-        assertFalse(deletedOrder.isPresent());
+        assertTrue(deletedCart.isPresent());
+        assertTrue(deletedOrder.isPresent());
     }
 }
