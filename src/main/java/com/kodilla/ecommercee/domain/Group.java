@@ -24,11 +24,6 @@ public class Group {
     @Column(name = "name")
     private String name;
 
-    public Group(Long groupId, String name) {
-        this.groupId = groupId;
-        this.name = name;
-    }
-
     @OneToMany(
             targetEntity = Product.class,
             mappedBy = "group",
@@ -36,4 +31,9 @@ public class Group {
             fetch = FetchType.EAGER
     )
     private List<Product> products = new ArrayList<>();
+
+    public Group(Long groupId, String name) {
+        this.groupId = groupId;
+        this.name = name;
+    }
 }
