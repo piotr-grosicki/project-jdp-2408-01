@@ -62,4 +62,11 @@ public class Product {
         this.quantity = quantity;
         this.price = price;
     }
+
+    public Product(long productId, String name, int quantity, BigDecimal price) {
+        this.productId = productId;
+        this.name = name;
+        this.quantity = quantity;
+        this.price = price;
+    }
 }
