@@ -33,17 +33,8 @@ public class Cart {
     @ManyToMany(mappedBy = "carts")
     private List<Product> products = new ArrayList<>();
 
-    public void addProduct(Product product) {
-        products.add(product);
-        product.getCarts().add(this);
+    public Cart(Long cartId) {
+        this.cartId = cartId;
     }
 
-    public void removeProduct(Product product) {
-        products.remove(product);
-        product.getCarts().remove(this);
-    }
-
-    public Cart(User user) {
-        this.user = user;
-    }
 }

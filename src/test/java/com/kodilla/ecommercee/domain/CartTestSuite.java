@@ -21,22 +21,6 @@ public class CartTestSuite {
     @Autowired
     private UserRepository userRepository;
 
-    @Test
-    public void testCreateCart() {
-        // Given
-        User user = new User();
-        userRepository.save(user);
-
-        Cart cart = new Cart(user);
-
-        // When
-        cartRepository.save(cart);
-        long id = cart.getCartId();
-        Optional<Cart> createdCart = cartRepository.findById(id);
-
-        // Then
-        assertTrue(createdCart.isPresent());
-    }
 
     @Test
     public void testGetCart() {
@@ -45,7 +29,8 @@ public class CartTestSuite {
         userRepository.save(user);
         long userId = user.getUserId();
 
-        Cart cart = new Cart(user);
+        Cart cart = new Cart();
+        cart.setUser(user);
         cartRepository.save(cart);
 
         // When
@@ -63,7 +48,8 @@ public class CartTestSuite {
         User user1 = new User();
         userRepository.save(user1);
 
-        Cart cart = new Cart(user1);
+        Cart cart = new Cart();
+        cart.setUser(user1);
         cartRepository.save(cart);
 
         // When
@@ -84,7 +70,8 @@ public class CartTestSuite {
         userRepository.save(user);
         long userId = user.getUserId();
 
-        Cart cart = new Cart(user);
+        Cart cart = new Cart();
+        cart.setUser(user);
         cartRepository.save(cart);
 
         // When

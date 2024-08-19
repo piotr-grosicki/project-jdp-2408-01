@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
 @Entity
@@ -53,4 +52,13 @@ public class User {
             fetch = FetchType.EAGER
     )
     private List<Order> orders = new ArrayList<>();
+
+    public User(Long userId, String username, String password, String email, Boolean isActive, Long personalKey) {
+        this.userId = userId;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.isActive = isActive;
+        this.personalKey = personalKey;
+    }
 }
