@@ -36,4 +36,8 @@ public class CartService {
         cartRepository.deleteById(cartId);
     }
 
+    public Cart getCart(final Long cartId) throws CartNotFoundException {
+        return cartRepository.findById(cartId).orElseThrow(CartNotFoundException::new);
+    }
+
 }

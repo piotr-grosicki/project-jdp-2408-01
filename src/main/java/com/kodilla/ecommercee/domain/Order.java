@@ -42,4 +42,11 @@ public class Order {
     public Order(User user) {
         this.user = user;
     }
+
+    public Order(Long id, BigDecimal totalPrice, LocalDate createdAt, boolean orderCompleted) {
+        this.orderId = id;
+        this.totalPrice = totalPrice;
+        this.created = createdAt;
+        this.orderCompleted = orderCompleted;
+    }
 }

@@ -8,9 +8,7 @@ import lombok.Setter;
 import java.util.List;
 
 @Getter
-@Setter
 @AllArgsConstructor
-@NoArgsConstructor
 public class CartDto {
     private Long cartId;
     private UserDto user;
